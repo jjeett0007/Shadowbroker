@@ -11,9 +11,7 @@ backend/venv-repair*/
 backend/.venv-repair*/
 
 # Environment Variables & Secrets
-.env
 .envrc
-.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -123,7 +121,6 @@ ehthumbs.db
 Thumbs.db
 
 # IDEs and Editors
-.vscode/
 .idea/
 *.suo
 *.ntvs*
@@ -303,3 +300,4 @@ CLAUDE.md
 # module. If a real test for that function is needed, write it under a
 # meaningful name in tests/test_carrier_tracker_quality.py.
 backend/tests/test_carrier_tracker_region_centers.py
+config.bat
