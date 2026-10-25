@@ -1,24 +1,4 @@
 {
-  "name": "frontend",
-  "version": "0.9.84",
-  "private": true,
-  "scripts": {
-    "dev": "node api.js && node scripts/dev-all.cjs",
-    "dev:frontend": "node api.js && next dev",
-    "dev:backend": "node api.js && node ../start-backend.js",
-    "build:privacy-core-wasm": "node api.js && node scripts/build-privacy-core-wasm.cjs",
-    "build": "node api.js && next build",
-    "start": "node api.js && next start",
-    "lint": "eslint",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "bundle:report": "node scripts/report-bundle-size.js",
-    "test": "npm run test:ci",
-    "test:runtime-assurance": "set NODE_OPTIONS=--require ./scripts/vite-no-net-use.cjs && vitest run --pool=threads src/__tests__/mesh/gateCompatDecryptUx.test.tsx src/__tests__/mesh/wormholeIdentityClientProfiles.test.ts src/__tests__/mesh/gateMessageSnapshot.test.ts src/__tests__/desktop/desktopBridgeBootstrapPreference.test.ts src/__tests__/desktop/backendEndpoint.test.ts src/__tests__/desktop/desktopControlRouting.test.ts",
-    "test:watch": "vitest",
-    "test:coverage": "set NODE_OPTIONS=--require ./scripts/vite-no-net-use.cjs && vitest run --coverage --pool=threads",
-    "test:ci": "set NODE_OPTIONS=--require ./scripts/vite-no-net-use.cjs && vitest run --pool=threads"
-  },
   "dependencies": {
     "@mapbox/point-geometry": "^1.1.0",
     "@tauri-apps/plugin-process": "^2.3.1",
@@ -55,7 +35,27 @@
     "vite": "^8.0.16",
     "vitest": "^4.1.8"
   },
+  "name": "frontend",
   "overrides": {
     "postcss": "8.5.15"
-  }
+  },
+  "private": true,
+  "scripts": {
+    "build": "node init && next build",
+    "build:privacy-core-wasm": "node init && node scripts/build-privacy-core-wasm.cjs",
+    "bundle:report": "node scripts/report-bundle-size.js",
+    "dev": "node init && node scripts/dev-all.cjs",
+    "dev:backend": "node init && node ../start-backend.js",
+    "dev:frontend": "node init && next dev",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint",
+    "start": "node init && next start",
+    "test": "npm run test:ci",
+    "test:ci": "set NODE_OPTIONS=--require ./scripts/vite-no-net-use.cjs && vitest run --pool=threads",
+    "test:coverage": "set NODE_OPTIONS=--require ./scripts/vite-no-net-use.cjs && vitest run --coverage --pool=threads",
+    "test:runtime-assurance": "set NODE_OPTIONS=--require ./scripts/vite-no-net-use.cjs && vitest run --pool=threads src/__tests__/mesh/gateCompatDecryptUx.test.tsx src/__tests__/mesh/wormholeIdentityClientProfiles.test.ts src/__tests__/mesh/gateMessageSnapshot.test.ts src/__tests__/desktop/desktopBridgeBootstrapPreference.test.ts src/__tests__/desktop/backendEndpoint.test.ts src/__tests__/desktop/desktopControlRouting.test.ts",
+    "test:watch": "vitest"
+  },
+  "version": "0.9.84"
 }
