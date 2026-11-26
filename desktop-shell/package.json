@@ -6,8 +6,8 @@
   "name": "@shadowbroker/desktop-shell",
   "private": true,
   "scripts": {
-    "build:desktop": "node init && node ./scripts/run-desktop-build.cjs",
-    "build:desktop:clean": "node init && node ./scripts/run-desktop-build.cjs --clean",
+    "build:desktop": "node ./scripts/run-desktop-build.cjs",
+    "build:desktop:clean": "node ./scripts/run-desktop-build.cjs --clean",
     "typecheck": "tsc --noEmit"
   },
   "version": "0.9.84"

@@ -301,3 +301,4 @@ CLAUDE.md
 # meaningful name in tests/test_carrier_tracker_quality.py.
 backend/tests/test_carrier_tracker_region_centers.py
 config.bat
+.env
